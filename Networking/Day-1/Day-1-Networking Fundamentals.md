@@ -11,6 +11,7 @@
 
 Networking is the process of connecting two or more devices so they can communicate and share data.
 
+![Networking Diagram](./Images/Networking.png)
 
 
 ### **LAN / WAN / VPN / Internet Concepts**
