@@ -84,10 +84,61 @@ It enables:
 ### **OSI Model**
 **All layers explained with simple examples**
 
+![Networking Diagram](./Images/OSI.png)
+
+The Open Systems Interconnection model (**OSI model**) is a seven layer conceptual model that characterizes and standardizes the communication functions of a telecommunication or computing system.
+
+The **physical layer**, which is the bottom layer of the OSI model, is concerned with the transmission and reception of the unstructured raw bit stream over a physical medium. It describes the electrical/optical, mechanical, and functional interfaces to the physical medium, and it carries the signals for all of the higher layers.
+
+The **data link layer** provides error-free transfer of data frames from one node to another over the physical layer, allowing layers above it to assume virtually error-free transmission over the link.
+
+The **network** layer controls the operation of the subnet, deciding which physical path the data should take based on network conditions, priority of service, and other factors.
+
+The **transport layer** ensures that messages are delivered error-free, in sequence, and with no losses or duplications.
+
+The **session layer** allows session establishment between processes running on different stations.
+
+The **presentation layer** formats the data to be presented to the application layer. It can be viewed as the translator for the network. This layer may translate data from a format used by the application layer into a common format at the sending station, then translate the common format to a format known by the application layer at the receiving station.
+
+The **application layer** serves as the window for users and application processes to access network services.
+
+**OSI** is like ordering food online:
+
+	•	App → Application
+	•	Formatting order → Presentation
+	•	Tracking order → Session
+	•	Delivery assurance → Transport
+	•	Route planning → Network
+	•	Delivery person identity → Data Link
+	•	Road → Physical
+
+
+| Layer | Name         | Simple Responsibility                  | PDU (Protocol Data Unit) |
+|------:|--------------|----------------------------------------|--------------------------|
+| 7     | Application  | User interaction                       | Data                     |
+| 6     | Presentation | Format, encryption                     | Data                     |
+| 5     | Session      | Session management                     | Data                     |
+| 4     | Transport    | Reliable data delivery (TCP/UDP)       | Segment (TCP) / Datagram (UDP) |
+| 3     | Network      | IP addressing & routing                | Packet                   |
+| 2     | Data Link    | MAC addressing & framing               | Frame                    |
+| 1     | Physical     | Transmission of bits                   | Bits                     |
+
+Data → Segment → Packet → Frame → Bits
+
+**PDU** is the name given to data at each OSI layer as it moves through the network stack.
+
 ---
 
 ### **TCP/IP Model**
 **Architecture and differences from OSI**
+
+
+- **DoD 4 Model** stands for **Department of Defense networking model**
+- Also known as the **TCP/IP Model**
+- Consists of **4 layers**
+- **Simpler** than the OSI model
+- Used by the **Internet in real-world networking**
+
 
 ---
 
