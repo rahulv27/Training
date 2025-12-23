@@ -77,10 +77,7 @@ It enables:
 | Feature        | LAN                         | MAN                          | WAN / Internet               |
 |----------------|-----------------------------|------------------------------|------------------------------|
 | Area Covered   | Local (Room / Building)     | City / Metropolis            | Global (Country / World)     |
-| Data Speed     | Very High                   | Moderate                     | Lower                        |
-| Cost           | Low                         | Moderate                     | High                         |
 | Transmission   | Ethernet, Wi-Fi             | Fiber Optics, Microwave      | Satellite, Leased Lines      |
-| Error Rate     | Very Low                    | Moderate                     | High                         |
 
 ---
 
