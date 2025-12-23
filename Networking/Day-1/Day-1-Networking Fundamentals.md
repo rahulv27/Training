@@ -101,6 +101,7 @@ The **session layer** allows session establishment between processes running on 
 The **presentation layer** formats the data to be presented to the application layer. It can be viewed as the translator for the network. This layer may translate data from a format used by the application layer into a common format at the sending station, then translate the common format to a format known by the application layer at the receiving station.
 
 The **application layer** serves as the window for users and application processes to access network services.
+
 **Application Layer Protocols**
 | Protocol | Purpose |
 |--------|--------|
