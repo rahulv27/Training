@@ -154,6 +154,14 @@ Data → Segment → Packet → Frame → Bits
 
 ---
 
+### **Protocol Headers**
+1. TCP Header  
+2. UDP Header  
+3. IP Header  
+4. Ethernet Header  
+
+### **TCP Flags**
+
 ### **MAC, IP, ARP Basics**
 
 ---
