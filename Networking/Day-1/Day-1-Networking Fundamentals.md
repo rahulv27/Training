@@ -1,33 +1,40 @@
-1. Networking Fundamentals
-Objective: Build foundation from zero.
+# Networking Fundamentals
 
-Topics:
+## **Objective**
+**Build foundation from zero**
 
-What is Networking?
+---
 
+## **Topics**
 
-LAN/WAN/VPN/Internet concepts
+### **What is Networking?**
 
+### **LAN / WAN / VPN / Internet Concepts**
 
-OSI Model (All layers + simple examples)
+### **OSI Model**
+**(All layers with simple examples)**
 
+### **TCP/IP Model**
+**Architecture and differences from OSI**
 
-TCP/IP Model & differences
+### **MAC, IP, ARP Basics**
 
+### **TCP vs UDP**
+**Use cases — SSH vs DNS vs HTTP**
 
-MAC, IP, ARP basics
+### **Packets, Ports, MTU**
 
+---
 
-TCP vs UDP (use cases — SSH vs DNS vs HTTP)
+## **Instructor Teaching Tip**
+**Use real-world analogies**  
+OSI is like a **food delivery pipeline** 🍔🚚  
 
+### **Hands-on Labs**
+- Check IP address of the system  
+- View ARP table  
 
-Packets, Ports, MTU
+---
 
-
-Instructor teaching tip:
- Use real analogy — OSI like a food delivery pipeline.
-Labs:
-Check IP of system, view ARP table
-
-
-Capture packets with tcpdump (intro only)
+## **Packet Capture (Intro)**
+**Capture packets using `tcpdump`**
