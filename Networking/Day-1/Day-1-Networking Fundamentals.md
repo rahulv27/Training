@@ -9,6 +9,10 @@
 
 ### **What is Networking?**
 
+Networking is the process of connecting two or more devices so they can communicate and share data.
+
+
+
 ### **LAN / WAN / VPN / Internet Concepts**
 
 ### **OSI Model**
