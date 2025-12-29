@@ -142,6 +142,9 @@ Data → Segment → Packet → Frame → Bits
 ---
 
 ### **TCP/IP Model**
+
+![Networking Diagram](./Images/TCP:IP.png)
+
 **Architecture and differences from OSI**
 
 
