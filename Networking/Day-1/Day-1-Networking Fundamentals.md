@@ -166,18 +166,58 @@ Data → Segment → Packet → Frame → Bits
 **TCP Header**
 ![Networking Diagram](./Images/WS_TCP_Header.png)
 
+![Networking Diagram](./Images/TCP_Header_field.png)
 
+ **Source Port(16 bits)**: The source port number(sending application).
+ **Destination Port(16 bits)**:The destination port number(receiving application).
+
+	•	Allows 65,536 ports (0–65535)
+	•	Well-known ports: 0–1023
+	•	Registered ports: 1024–49151
+	•	Ephemeral ports: 49152–65535
+    
+	Client:  192.168.1.10:52344
+    Server:  172.217.0.46:443 (HTTPS)
+
+**Sequence Number(32 bits)**: Each byte of data gets a unique number, like tracking numbers on packages. Real-time example: You're downloading a 10MB video file. The sender breaks it into chunks and labels them: bytes 1-1000 (sequence 1), bytes 1001-2000 (sequence 1001), etc. If packet 5001 arrives before 3001, your computer knows to wait and reorder them correctly.
+
+**Acknowledgment Number (32 bits)**: The acknowledgment number indicates the next byte the receiver expects to receive and confirms successful receipt of all bytes before this number.
+
+**Data Offset(DO)**:Specifies the length of the TCP header in 32-bit words. A 4-bit field that tells the receiver where the header ends and the actual data begins.
 
 ### **TCP Flags**
 
+### **Modern TCP headers have 9 control flags, not just 6.**
+
 ![Networking Diagram](./Images/TCP_flags.png)
+Control Flags: 9 flags (URG, ACK, PSH, RST, SYN, FIN, NS, CWR, ECE)
+
+	•	SYN – Starts a TCP connection (used in the 3-way handshake)
+	•	ACK – Confirms successful receipt of data or control packets (set on almost all packets after connection setup)
+	•	FIN – Gracefully closes a connection when no more data is to be sent
+	•	Reset – Abruptly terminates a connection due to errors or unexpected conditions
+
+	•	Push() – Requests immediate delivery of received data to the application
+	•	Urgent – Indicates the presence of urgent data (used with the Urgent Pointer)
+
+Congestion Control (ECN-related)
+	•	ECE (ECN-Echo)– Signals network congestion detected via ECN
+	•	CWR(Congestion Window Reduced) – Confirms that the sender has reduced its sending rate due to congestion
+	•	NS (Nonce Sum) – Experimental flag used with ECN to detect misbehaving receivers (rarely used)
+
+
+
+
 
 ### **MAC, IP, ARP Basics**
 
 ---
 
 ### **TCP vs UDP**
+
 **Use cases — SSH vs DNS vs HTTP**
+
+**Three-way Handshake ?**
 
 ---
 
