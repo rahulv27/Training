@@ -165,6 +165,8 @@ Data → Segment → Packet → Frame → Bits
 
 ### **TCP Flags**
 
+![Networking Diagram](./Images/TCP_flags.png)
+
 ### **MAC, IP, ARP Basics**
 
 ---
