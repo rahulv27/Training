@@ -164,7 +164,7 @@ Data → Segment → Packet → Frame → Bits
 4. Ethernet Header 
 
 **TCP Header**
-![Networking Diagram](./Images/TCP_Header.png)
+![Networking Diagram](./Images/WS_TCP_Header.png)
 
 
 
