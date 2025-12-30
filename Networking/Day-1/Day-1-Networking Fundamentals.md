@@ -161,7 +161,12 @@ Data → Segment → Packet → Frame → Bits
 1. TCP Header  
 2. UDP Header  
 3. IP Header  
-4. Ethernet Header  
+4. Ethernet Header 
+
+**TCP Header**
+![Networking Diagram](./Images/TCP_Header.png)
+
+
 
 ### **TCP Flags**
 
