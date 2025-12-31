@@ -205,17 +205,15 @@ Control Flags: 9 flags (URG, ACK, PSH, RST, SYN, FIN, NS, CWR, ECE)
 
 Difference between "sending data immediately" (PSH) and "interrupting the data stream" (URG).
 
-Push flag:
+**Push flag**:
 ### SSH/Telnet Sessions
 
 ![Networking Diagram](./Images/push_flag.png)
 ![Networking Diagram](./Images/push_1.png)
 When you type commands in an SSH terminal session, each keystroke is sent immediately with the PSH flag set. This prevents buffering and ensures your typing appears instantly on the remote server, making the terminal feel responsive. Without PSH, your keystrokes would wait in a buffer until enough data accumulated, causing noticeable lag in interactive sessions.
 
-Urgent flag:
+**Urgent flag**:
 The most common real-world use of the URG flag is when you press Ctrl+C to interrupt a running process in an SSH or Telnet session. The interrupt signal is marked as urgent and processed immediately, even if there's data already queued in the buffer. This allows you to kill a stuck command without waiting for normal data processing.
-
-### 
 
 
 ### **Congestion Control (ECN-related)**
@@ -263,6 +261,19 @@ Contains only zero values.
 ## Data
 Handed down to the TCP protocol at the Transport layer, which includes the
 upper-layer headers. Contains the actual application payload being transmitted.  
+
+
+---
+
+### **IP Header**
+
+---
+
+### **UDP Header**
+
+---
+
+### **Ethernet Header**
 
 
 
