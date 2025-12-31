@@ -139,8 +139,6 @@ Data → Segment → Packet → Frame → Bits
 
 **PDU** is the name given to data at each OSI layer as it moves through the network stack.
 
----
-
 ### **TCP/IP Model**
 
 ![Networking Diagram](./Images/TCP:IP.png)
@@ -162,7 +160,7 @@ Data → Segment → Packet → Frame → Bits
 2. UDP Header  
 3. IP Header  
 4. Ethernet Header 
-
+---
 **TCP Header**
 
 ![Networking Diagram](./Images/WS_TCP_Header.png)
@@ -206,7 +204,7 @@ Control Flags: 9 flags (URG, ACK, PSH, RST, SYN, FIN, NS, CWR, ECE)
 Difference between "sending data immediately" (PSH) and "interrupting the data stream" (URG).
 
 **Push flag**:
-### SSH/Telnet Sessions
+SSH/Telnet Sessions
 
 ![Networking Diagram](./Images/push_flag.png)
 ![Networking Diagram](./Images/push_1.png)
@@ -222,43 +220,32 @@ The most common real-world use of the URG flag is when you press Ctrl+C to inter
 	•	CWR(Congestion Window Reduced) – Confirms that the sender has reduced its sending rate due to congestion
 	•	NS (Nonce Sum) – Experimental flag used with ECN to detect misbehaving receivers (rarely used)
 
-
-## Window Size
+**Window Size**
 
 Specifies how much data the receiver is willing to accept.  
 Implements flow control to prevent buffer overflow.
 
----
-
-## Checksum
+**Checksum**
 
 Used to verify the integrity of the TCP header and data.  
 Protects against corruption during transmission.
 
----
 
-## Urgent Pointer
+**Urgent Pointer**
 
 Indicates the end of urgent data in the TCP stream when the URG flag is set.  
 Rarely used in modern applications.
 
----
-
-## Options
-
+**Options**
 Carries additional TCP capabilities such as MSS, window scaling, and timestamps.  
 Allows TCP to optimize performance.
 
----
-
-## Padding
+**Padding**
 
 Adds extra bits to ensure the TCP header length is a multiple of 4 bytes.  
 Contains only zero values.
 
----
-
-## Data
+**Data**
 Handed down to the TCP protocol at the Transport layer, which includes the
 upper-layer headers. Contains the actual application payload being transmitted.  
 
