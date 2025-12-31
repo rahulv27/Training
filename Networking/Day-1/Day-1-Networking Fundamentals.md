@@ -249,14 +249,28 @@ Contains only zero values.
 Handed down to the TCP protocol at the Transport layer, which includes the
 upper-layer headers. Contains the actual application payload being transmitted.  
 
+---
+
+### **UDP Header**
+![Networking Diagram](./Images/udp_header.png)
+
+## UDP Header Fields
+
+- **Source Port**: Port number of the application on the sending host.
+- **Destination Port**: Port number of the requested application on the destination host.
+- **Length**: Total length of the UDP header + UDP data.
+- **Checksum**: Error-checking value calculated over the UDP header and data  
+  (UDP performs its own CRC, independent of lower layers).
+- **Data**: Upper-layer application data (for example, DNS, Video streaming, VoIP).
+
+### Key Note
+
+Even though the **Frame Check Sequence (FCS)** at the Data Link layer provides CRC,  
+**UDP does not trust lower layers**, so it still computes its own checksum.
 
 ---
 
 ### **IP Header**
-
----
-
-### **UDP Header**
 
 ---
 
