@@ -197,10 +197,11 @@ Control Flags: 9 flags (URG, ACK, PSH, RST, SYN, FIN, NS, CWR, ECE)
 	•	FIN – Gracefully closes a connection when no more data is to be sent
 	•	Reset – Abruptly terminates a connection due to errors or unexpected conditions
 
-	•	Push() – Requests immediate delivery of received data to the application
+	•	Push – Requests immediate delivery of received data to the application
 	•	Urgent – Indicates the presence of urgent data (used with the Urgent Pointer)
 
-Congestion Control (ECN-related)
+##**Congestion Control (ECN-related)**
+
 	•	ECE (ECN-Echo)– Signals network congestion detected via ECN
 	•	CWR(Congestion Window Reduced) – Confirms that the sender has reduced its sending rate due to congestion
 	•	NS (Nonce Sum) – Experimental flag used with ECN to detect misbehaving receivers (rarely used)
