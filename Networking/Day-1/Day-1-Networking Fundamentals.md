@@ -283,7 +283,7 @@ Even though the **Frame Check Sequence (FCS)** at the Data Link layer provides C
 
 ### **Ethernet Header**
 
-
+---
 
 ### **MAC, IP, ARP Basics**
 
