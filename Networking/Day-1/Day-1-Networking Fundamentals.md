@@ -461,11 +461,14 @@ Meaning: "Got it, connection ready"
 
 ![Networking Diagram](./Images/FinishSession.png)
 
-| Step | Sender | TCP Flags | Meaning | State Transition |
-| **1** | Client | `FIN`, `ACK` | Initiates active close; indicates no more data from client. | ESTABLISHED &rarr; FIN-WAIT-1 |
-| **2** | Server | `ACK` | Acknowledges receipt of FIN; enters "half-closed" state. | ESTABLISHED &rarr; CLOSE-WAIT |
-| **3** | Server | `FIN`, `ACK` | Initiates passive close after application finishes sending data. | CLOSE-WAIT &rarr; LAST-ACK |
-| **4** | Client | `ACK` | Acknowledges server's FIN; enters TIME-WAIT for cleanup. | FIN-WAIT-2 &rarr; TIME-WAIT |
+### **TCP Connection Termination (FIN-based / Graceful Close)**
+
+| Step | Sender | TCP Flags | Technical Meaning | State Transition |
+|------|--------|-----------|-------------------|------------------|
+| 1 | Client | FIN, ACK | Initiates active close; indicates no more data from client | ESTABLISHED → FIN-WAIT-1 |
+| 2 | Server | ACK | Acknowledges receipt of FIN; enters half-closed state | ESTABLISHED → CLOSE-WAIT |
+| 3 | Server | FIN, ACK | Initiates passive close after application finishes sending data | CLOSE-WAIT → LAST-ACK |
+| 4 | Client | ACK | Acknowledges server FIN; enters TIME-WAIT for cleanup | FIN-WAIT-2 → TIME-WAIT |
 
 
 ---
@@ -481,42 +484,7 @@ MTU defines the maximum packet size that can be transmitted over a network link 
 
 MTU = 1500 bytes total
 
-Breakdown:
-┌─────────────────────────────────────────┐
-│ Ethernet Header: 14 bytes (Layer 2)    │
-├─────────────────────────────────────────┤
-│ IP Header: 20 bytes (minimum)           │
-├─────────────────────────────────────────┤
-│ TCP Header: 20 bytes (minimum)          │
-├─────────────────────────────────────────┤
-│ Data (Payload): 1460 bytes maximum      │ ← MSS
-└─────────────────────────────────────────┘
-
-Total: 14 + 20 + 20 + 1460 = 1514 bytes (Ethernet frame)
-Note: The 1500-byte MTU refers to the IP packet (Layer 3), NOT including the 14-byte Ethernet header.
-
-Ethernet Frame Structure (1514 bytes total)
-┌──────────────────────────────────────────────────────┐
-│ Ethernet Header (14 bytes) - Layer 2                 │
-├──────────────────────────────────────────────────────┤
-│ ┌────────────────────────────────────────────────┐   │
-│ │ IP Packet (1500 bytes) - Layer 3 ← MTU        │   │
-│ ├────────────────────────────────────────────────┤   │
-│ │ IP Header (20 bytes minimum)                   │   │
-│ ├────────────────────────────────────────────────┤   │
-│ │ ┌──────────────────────────────────────────┐   │   │
-│ │ │ TCP/UDP Segment (1480 bytes)             │   │   │
-│ │ ├──────────────────────────────────────────┤   │   │
-│ │ │ TCP Header (20 bytes minimum)            │   │   │
-│ │ ├──────────────────────────────────────────┤   │   │
-│ │ │ Data (1460 bytes) ← MSS                  │   │   │
-│ │ └──────────────────────────────────────────┘   │   │
-│ └────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────┘
-MTU = 1500 bytes (IP packet including IP header)
-MSS = MTU - IP header (20) - TCP header (20)
-MSS = 1500 - 20 - 20 = 1460 bytes
-
+![Networking Diagram](./Images/MSS_MTU.png)
 
 MTU and Fragmentation
 	•	If a packet exceeds MTU:
