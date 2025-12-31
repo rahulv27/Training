@@ -164,6 +164,7 @@ Data → Segment → Packet → Frame → Bits
 4. Ethernet Header 
 
 **TCP Header**
+
 ![Networking Diagram](./Images/WS_TCP_Header.png)
 
 ![Networking Diagram](./Images/TCP_Header_field.png)
@@ -200,13 +201,68 @@ Control Flags: 9 flags (URG, ACK, PSH, RST, SYN, FIN, NS, CWR, ECE)
 	•	Push – Requests immediate delivery of received data to the application
 	•	Urgent – Indicates the presence of urgent data (used with the Urgent Pointer)
 
-##**Congestion Control (ECN-related)**
+### Example of Push and Urgent flag:
+
+Difference between "sending data immediately" (PSH) and "interrupting the data stream" (URG).
+
+Push flag:
+### SSH/Telnet Sessions
+
+![Networking Diagram](./Images/push_flag.png)
+![Networking Diagram](./Images/push_1.png)
+When you type commands in an SSH terminal session, each keystroke is sent immediately with the PSH flag set. This prevents buffering and ensures your typing appears instantly on the remote server, making the terminal feel responsive. Without PSH, your keystrokes would wait in a buffer until enough data accumulated, causing noticeable lag in interactive sessions.
+
+Urgent flag:
+The most common real-world use of the URG flag is when you press Ctrl+C to interrupt a running process in an SSH or Telnet session. The interrupt signal is marked as urgent and processed immediately, even if there's data already queued in the buffer. This allows you to kill a stuck command without waiting for normal data processing.
+
+### 
+
+
+### **Congestion Control (ECN-related)**
 
 	•	ECE (ECN-Echo)– Signals network congestion detected via ECN
 	•	CWR(Congestion Window Reduced) – Confirms that the sender has reduced its sending rate due to congestion
 	•	NS (Nonce Sum) – Experimental flag used with ECN to detect misbehaving receivers (rarely used)
 
 
+## Window Size
+
+Specifies how much data the receiver is willing to accept.  
+Implements flow control to prevent buffer overflow.
+
+---
+
+## Checksum
+
+Used to verify the integrity of the TCP header and data.  
+Protects against corruption during transmission.
+
+---
+
+## Urgent Pointer
+
+Indicates the end of urgent data in the TCP stream when the URG flag is set.  
+Rarely used in modern applications.
+
+---
+
+## Options
+
+Carries additional TCP capabilities such as MSS, window scaling, and timestamps.  
+Allows TCP to optimize performance.
+
+---
+
+## Padding
+
+Adds extra bits to ensure the TCP header length is a multiple of 4 bytes.  
+Contains only zero values.
+
+---
+
+## Data
+Handed down to the TCP protocol at the Transport layer, which includes the
+upper-layer headers. Contains the actual application payload being transmitted.  
 
 
 
