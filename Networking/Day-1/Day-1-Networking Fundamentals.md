@@ -505,13 +505,6 @@ Path MTU Discovery (PMTUD)
 | Scope            | Entire network path                                    | TCP connection only                                 |
 | Negotiation      | Set by network interface                               | Negotiated during TCP 3-way handshake               |
 
-
----
-
-## **Instructor Teaching Tip**
-**Use real-world analogies**  
-OSI is like a **food delivery pipeline** 🍔🚚
-
 ---
 
 ### **Hands-on Labs**
